@@ -7,6 +7,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Check from '@mui/icons-material/Check'
+import Box from '@mui/material/Box'
 
 function Templates() {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -19,8 +20,9 @@ function Templates() {
   }
 
   return (
-    <div>
+    <Box>
       <Button
+        sx={{ color: 'white' }}
         id="basic-button-templates"
         aria-controls={open ? 'basic-menu-templates' : undefined}
         aria-haspopup="true"
@@ -66,7 +68,7 @@ function Templates() {
           <ListItemText>Custom spacing...</ListItemText>
         </MenuItem>
       </Menu>
-    </div>
+    </Box>
   )
 }
 

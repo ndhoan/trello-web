@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import MyAvatar from '~/assets/avatar.jpg'
 import * as React from 'react'
+import Box from '@mui/material/Box'
 
 function Profiles() {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -22,7 +23,7 @@ function Profiles() {
   }
 
   return (
-    <div>
+    <Box>
       <Tooltip title="Account settings">
         <IconButton
           onClick={handleClick}
@@ -32,7 +33,7 @@ function Profiles() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 30, height: 30 }}
+          <Avatar sx={{ width: 36, height: 36 }}
             alt='HoanNguyenDev'
             src={MyAvatar}
           />
@@ -73,7 +74,7 @@ function Profiles() {
           Logout
         </MenuItem>
       </Menu>
-    </div>
+    </Box>
   )
 }
 

@@ -11,6 +11,7 @@ import ContentCopy from '@mui/icons-material/ContentCopy'
 import ContentCut from '@mui/icons-material/ContentCut'
 import ContentPaste from '@mui/icons-material/ContentPaste'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import Box from '@mui/material/Box'
 
 function Workspaces() {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -23,8 +24,9 @@ function Workspaces() {
   }
 
   return (
-    <div>
+    <Box>
       <Button
+        sx={{ color: 'white' }}
         id="basic-button-workspaces"
         aria-controls={open ? 'basic-menu-workspaces' : undefined}
         aria-haspopup="true"
@@ -78,7 +80,7 @@ function Workspaces() {
           <ListItemText>Web Clipboard</ListItemText>
         </MenuItem>
       </Menu>
-    </div>
+    </Box>
   )
 }
 

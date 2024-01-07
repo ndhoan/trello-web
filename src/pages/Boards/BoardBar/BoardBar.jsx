@@ -11,6 +11,7 @@ import Chip from '@mui/material/Chip'
 import Button from '@mui/material/Button'
 import MyAvatar from '~/assets/avatar.jpg'
 import Tooltip from '@mui/material/Tooltip'
+import { capitalizeFirstLetter } from '~/utils/formatters'
 
 const MENU_STYLE = {
   color: 'white',
@@ -26,7 +27,7 @@ const MENU_STYLE = {
   }
 }
 
-function BoardBar() {
+function BoardBar({ board }) {
   return (
     <Box sx={{
       width: '100%',
@@ -43,11 +44,11 @@ function BoardBar() {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip sx={MENU_STYLE}
           icon={<DashboardIcon />}
-          label="HoanNguyenDev"
+          label={board?.title}
           clickable/>
         <Chip sx={MENU_STYLE}
           icon={<VpnLockIcon />}
-          label="Public/Private Workspace"
+          label={capitalizeFirstLetter(board?.type)}
           clickable/>
         <Chip sx={MENU_STYLE}
           icon={<AddToDriveIcon />}

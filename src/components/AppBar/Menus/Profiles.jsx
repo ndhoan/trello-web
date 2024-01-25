@@ -1,16 +1,17 @@
-import Logout from '@mui/icons-material/Logout'
-import PersonAdd from '@mui/icons-material/PersonAdd'
-import Settings from '@mui/icons-material/Settings'
-import Avatar from '@mui/material/Avatar'
-import Divider from '@mui/material/Divider'
-import IconButton from '@mui/material/IconButton'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import Tooltip from '@mui/material/Tooltip'
-import MyAvatar from '~/assets/avatar.jpg'
-import * as React from 'react'
-import Box from '@mui/material/Box'
+import Logout from "@mui/icons-material/Logout"
+import PersonAdd from "@mui/icons-material/PersonAdd"
+import Settings from "@mui/icons-material/Settings"
+import Avatar from "@mui/material/Avatar"
+import Divider from "@mui/material/Divider"
+import IconButton from "@mui/material/IconButton"
+import ListItemIcon from "@mui/material/ListItemIcon"
+import Menu from "@mui/material/Menu"
+import MenuItem from "@mui/material/MenuItem"
+import Tooltip from "@mui/material/Tooltip"
+import MyAvatar from "~/assets/avatar.jpg"
+import * as React from "react"
+import Box from "@mui/material/Box"
+import UserService from "~/services/UserService"
 
 function Profiles() {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -29,12 +30,13 @@ function Profiles() {
           onClick={handleClick}
           size="small"
           sx={{ padding: 0 }}
-          aria-controls={open ? 'basic-menu-profiles' : undefined}
+          aria-controls={open ? "basic-menu-profiles" : undefined}
           aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
+          aria-expanded={open ? "true" : undefined}
         >
-          <Avatar sx={{ width: 36, height: 36 }}
-            alt='HoanNguyenDev'
+          <Avatar
+            sx={{ width: 36, height: 36 }}
+            alt="HoanNguyenDev"
             src={MyAvatar}
           />
         </IconButton>
@@ -45,14 +47,15 @@ function Profiles() {
         open={open}
         onClose={handleClose}
         MenuListProps={{
-          'aria-labelledby': 'basic-button-profiles'
+          "aria-labelledby": "basic-button-profiles",
         }}
       >
         <MenuItem onClick={handleClose}>
           <Avatar sx={{ width: 28, height: 28, mr: 2 }} /> Profile
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Avatar sx={{ width: 28, height: 28, mr: 2 }} /> My account
+          <Avatar sx={{ width: 28, height: 28, mr: 2 }} />{" "}
+          {UserService.getUsername()}
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
@@ -67,7 +70,7 @@ function Profiles() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => UserService.doLogout()}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

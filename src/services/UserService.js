@@ -1,7 +1,10 @@
 import Keycloak from "keycloak-js"
 
 let initOptions = {
-  url: "http://localhost:8080/",
+  // url: "http://localhost:8080/",
+  // url: "http://172.18.0.2:8080/",
+  url: "http://192.168.1.130:8080/",
+  // url: "http://172.25.192.75:8080/",
   realm: "demo",
   clientId: "react-demo",
 }
